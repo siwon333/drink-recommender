@@ -1,0 +1,349 @@
+[
+  {
+    "name": {
+      "한국어": "아이스 아메리카노",
+      "English": "Iced Americano",
+      "Indonesia": "Americano Dingin"
+    },
+    "desc": {
+      "한국어": "시원하고 깔끔한 맛의 아이스 커피",
+      "English": "Chilled, clean-flavored iced coffee",
+      "Indonesia": "Kopi dingin dengan rasa segar dan bersih"
+    },
+    "ingredients": {
+      "한국어": [
+        "커피",
+        "물",
+        "얼음"
+      ],
+      "English": [
+        "coffee",
+        "water",
+        "ice"
+      ],
+      "Indonesia": [
+        "kopi",
+        "air",
+        "es batu"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2020/05/03/14/20/iced-coffee-5127280_960_720.jpg",
+    "recipe": {
+      "한국어": "에스프레소 2샷 + 물 + 얼음",
+      "English": "2 shots of espresso + water + ice",
+      "Indonesia": "2 shot espresso + air + es batu"
+    }
+  },
+  {
+    "name": {
+      "한국어": "핫초코",
+      "English": "Hot Chocolate",
+      "Indonesia": "Cokelat Panas"
+    },
+    "desc": {
+      "한국어": "달콤하고 부드러운 따뜻한 음료",
+      "English": "Sweet and creamy warm drink",
+      "Indonesia": "Minuman hangat yang manis dan lembut"
+    },
+    "ingredients": {
+      "한국어": [
+        "우유",
+        "초콜릿",
+        "설탕"
+      ],
+      "English": [
+        "milk",
+        "chocolate",
+        "sugar"
+      ],
+      "Indonesia": [
+        "susu",
+        "cokelat",
+        "gula"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/05/07/hot-chocolate-1869658_960_720.jpg",
+    "recipe": {
+      "한국어": "우유 + 초콜릿 + 설탕 데우기",
+      "English": "Heat milk + chocolate + sugar",
+      "Indonesia": "Panaskan susu + cokelat + gula"
+    }
+  },
+  {
+    "name": {
+      "한국어": "에너지 드링크",
+      "English": "Energy Drink",
+      "Indonesia": "Minuman Energi"
+    },
+    "desc": {
+      "한국어": "카페인 가득한 에너지 부스터",
+      "English": "A caffeine-packed energy booster",
+      "Indonesia": "Booster energi dengan banyak kafein"
+    },
+    "ingredients": {
+      "한국어": [
+        "카페인",
+        "당",
+        "타우린"
+      ],
+      "English": [
+        "caffeine",
+        "sugar",
+        "taurine"
+      ],
+      "Indonesia": [
+        "kafein",
+        "gula",
+        "taurin"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2017/03/27/13/53/energy-drink-2179032_960_720.jpg",
+    "recipe": {
+      "한국어": "그냥 따서 마시면 끝!",
+      "English": "Just open the can and enjoy!",
+      "Indonesia": "Buka kaleng dan langsung diminum!"
+    }
+  },
+  {
+    "name": {
+      "한국어": "레모네이드",
+      "English": "Lemonade",
+      "Indonesia": "Limun"
+    },
+    "desc": {
+      "한국어": "상큼하고 달콤한 여름철 인기 음료",
+      "English": "Sweet and tangy drink, perfect for summer",
+      "Indonesia": "Minuman segar dan manis, cocok untuk musim panas"
+    },
+    "ingredients": {
+      "한국어": [
+        "레몬",
+        "설탕",
+        "물"
+      ],
+      "English": [
+        "lemon",
+        "sugar",
+        "water"
+      ],
+      "Indonesia": [
+        "lemon",
+        "gula",
+        "air"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2017/05/23/22/36/lemonade-2333426_960_720.jpg",
+    "recipe": {
+      "한국어": "레몬즙에 설탕과 물을 섞어주세요",
+      "English": "Mix lemon juice with sugar and water",
+      "Indonesia": "Campur air lemon dengan gula dan air"
+    }
+  },
+  {
+    "name": {
+      "한국어": "말차 라떼",
+      "English": "Matcha Latte",
+      "Indonesia": "Matcha Latte"
+    },
+    "desc": {
+      "한국어": "부드럽고 향긋한 녹차 라떼",
+      "English": "Smooth and fragrant green tea latte",
+      "Indonesia": "Latte teh hijau yang lembut dan harum"
+    },
+    "ingredients": {
+      "한국어": [
+        "말차",
+        "우유",
+        "설탕"
+      ],
+      "English": [
+        "matcha",
+        "milk",
+        "sugar"
+      ],
+      "Indonesia": [
+        "matcha",
+        "susu",
+        "gula"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2020/09/30/17/44/matcha-5616305_960_720.jpg",
+    "recipe": {
+      "한국어": "말차 가루에 뜨거운 물과 우유를 섞으세요",
+      "English": "Mix matcha powder with hot water and milk",
+      "Indonesia": "Campur bubuk matcha dengan air panas dan susu"
+    }
+  },
+  {
+    "name": {
+      "한국어": "복숭아 아이스티",
+      "English": "Peach Iced Tea",
+      "Indonesia": "Teh Dingin Persik"
+    },
+    "desc": {
+      "한국어": "달콤하고 과일 향이 나는 아이스티",
+      "English": "Sweet iced tea with fruity peach aroma",
+      "Indonesia": "Teh dingin manis dengan aroma persik"
+    },
+    "ingredients": {
+      "한국어": [
+        "복숭아",
+        "홍차",
+        "얼음"
+      ],
+      "English": [
+        "peach",
+        "black tea",
+        "ice"
+      ],
+      "Indonesia": [
+        "persik",
+        "teh hitam",
+        "es batu"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2017/05/23/22/36/iced-tea-2333427_960_720.jpg",
+    "recipe": {
+      "한국어": "복숭아 시럽과 홍차를 얼음과 섞으세요",
+      "English": "Mix peach syrup and black tea with ice",
+      "Indonesia": "Campur sirup persik dan teh hitam dengan es"
+    }
+  },
+  {
+    "name": {
+      "한국어": "딸기 스무디",
+      "English": "Strawberry Smoothie",
+      "Indonesia": "Smoothie Stroberi"
+    },
+    "desc": {
+      "한국어": "신선한 딸기로 만든 시원한 스무디",
+      "English": "Refreshing smoothie made with fresh strawberries",
+      "Indonesia": "Smoothie segar dari stroberi asli"
+    },
+    "ingredients": {
+      "한국어": [
+        "딸기",
+        "우유",
+        "얼음"
+      ],
+      "English": [
+        "strawberry",
+        "milk",
+        "ice"
+      ],
+      "Indonesia": [
+        "stroberi",
+        "susu",
+        "es batu"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2018/07/12/22/55/smoothie-3532659_960_720.jpg",
+    "recipe": {
+      "한국어": "딸기, 우유, 얼음을 함께 갈아주세요",
+      "English": "Blend strawberries, milk, and ice together",
+      "Indonesia": "Blender stroberi, susu, dan es batu bersama"
+    }
+  },
+  {
+    "name": {
+      "한국어": "카페라떼",
+      "English": "Cafe Latte",
+      "Indonesia": "Kopi Susu"
+    },
+    "desc": {
+      "한국어": "부드러운 우유와 진한 에스프레소의 조화",
+      "English": "Smooth milk with rich espresso",
+      "Indonesia": "Susu lembut dengan espresso yang kuat"
+    },
+    "ingredients": {
+      "한국어": [
+        "에스프레소",
+        "우유"
+      ],
+      "English": [
+        "espresso",
+        "milk"
+      ],
+      "Indonesia": [
+        "espresso",
+        "susu"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2015/05/31/12/14/coffee-791439_960_720.jpg",
+    "recipe": {
+      "한국어": "에스프레소에 따뜻한 우유를 섞으세요",
+      "English": "Mix espresso with steamed milk",
+      "Indonesia": "Campur espresso dengan susu hangat"
+    }
+  },
+  {
+    "name": {
+      "한국어": "자몽 에이드",
+      "English": "Grapefruit Ade",
+      "Indonesia": "Limun Jeruk Bali"
+    },
+    "desc": {
+      "한국어": "상큼하고 쌉싸름한 자몽 에이드",
+      "English": "Tangy and bitter-sweet grapefruit ade",
+      "Indonesia": "Limun jeruk bali yang segar dan sedikit pahit"
+    },
+    "ingredients": {
+      "한국어": [
+        "자몽",
+        "탄산수",
+        "설탕"
+      ],
+      "English": [
+        "grapefruit",
+        "sparkling water",
+        "sugar"
+      ],
+      "Indonesia": [
+        "jeruk bali",
+        "air soda",
+        "gula"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2016/07/21/12/46/grapefruit-1532300_960_720.jpg",
+    "recipe": {
+      "한국어": "자몽즙과 탄산수를 섞고 설탕으로 조절하세요",
+      "English": "Mix grapefruit juice with soda and adjust with sugar",
+      "Indonesia": "Campur jus jeruk bali dengan soda dan tambahkan gula"
+    }
+  },
+  {
+    "name": {
+      "한국어": "블루베리 요거트 스무디",
+      "English": "Blueberry Yogurt Smoothie",
+      "Indonesia": "Smoothie Yogurt Blueberry"
+    },
+    "desc": {
+      "한국어": "요거트와 블루베리의 상큼한 조화",
+      "English": "Tangy blend of yogurt and blueberries",
+      "Indonesia": "Perpaduan segar yogurt dan blueberry"
+    },
+    "ingredients": {
+      "한국어": [
+        "블루베리",
+        "요거트",
+        "얼음"
+      ],
+      "English": [
+        "blueberry",
+        "yogurt",
+        "ice"
+      ],
+      "Indonesia": [
+        "blueberry",
+        "yogurt",
+        "es batu"
+      ]
+    },
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/02/59/berries-1867398_960_720.jpg",
+    "recipe": {
+      "한국어": "블루베리, 요거트, 얼음을 함께 갈아주세요",
+      "English": "Blend blueberries, yogurt, and ice together",
+      "Indonesia": "Blender blueberry, yogurt, dan es batu bersama"
+    }
+  }
+]

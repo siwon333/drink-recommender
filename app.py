@@ -2,88 +2,16 @@ import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 import torch
 import os
+import json
 import random
 
-# 충돌 방지용 환경변수
+# 환경 설정
 os.environ["STREAMLIT_WATCH_USE_POLLING"] = "true"
 
 # 모델 로드
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
-# 음료 데이터 (3개국어)
-drink_data = [
-    {
-        "name": {
-            "한국어": "아이스 아메리카노",
-            "English": "Iced Americano",
-            "Indonesia": "Americano Dingin"
-        },
-        "desc": {
-            "한국어": "시원하고 깔끔한 맛의 아이스 커피",
-            "English": "Chilled, clean-flavored iced coffee",
-            "Indonesia": "Kopi dingin dengan rasa segar dan bersih"
-        },
-        "ingredients": {
-            "한국어": ["커피", "물", "얼음"],
-            "English": ["coffee", "water", "ice"],
-            "Indonesia": ["kopi", "air", "es batu"]
-        },
-        "image": "https://cdn.pixabay.com/photo/2020/05/03/14/20/iced-coffee-5127280_960_720.jpg",
-        "recipe": {
-            "한국어": "에스프레소 2샷 + 물 + 얼음",
-            "English": "2 shots of espresso + water + ice",
-            "Indonesia": "2 shot espresso + air + es batu"
-        }
-    },
-    {
-        "name": {
-            "한국어": "핫초코",
-            "English": "Hot Chocolate",
-            "Indonesia": "Cokelat Panas"
-        },
-        "desc": {
-            "한국어": "달콤하고 부드러운 따뜻한 음료",
-            "English": "Sweet and creamy warm drink",
-            "Indonesia": "Minuman hangat yang manis dan lembut"
-        },
-        "ingredients": {
-            "한국어": ["우유", "초콜릿", "설탕"],
-            "English": ["milk", "chocolate", "sugar"],
-            "Indonesia": ["susu", "cokelat", "gula"]
-        },
-        "image": "https://cdn.pixabay.com/photo/2016/11/29/05/07/hot-chocolate-1869658_960_720.jpg",
-        "recipe": {
-            "한국어": "우유 + 초콜릿 + 설탕 데우기",
-            "English": "Heat milk + chocolate + sugar",
-            "Indonesia": "Panaskan susu + cokelat + gula"
-        }
-    },
-    {
-        "name": {
-            "한국어": "에너지 드링크",
-            "English": "Energy Drink",
-            "Indonesia": "Minuman Energi"
-        },
-        "desc": {
-            "한국어": "카페인 가득한 에너지 부스터",
-            "English": "A caffeine-packed energy booster",
-            "Indonesia": "Booster energi dengan banyak kafein"
-        },
-        "ingredients": {
-            "한국어": ["카페인", "당", "타우린"],
-            "English": ["caffeine", "sugar", "taurine"],
-            "Indonesia": ["kafein", "gula", "taurin"]
-        },
-        "image": "https://cdn.pixabay.com/photo/2017/03/27/13/53/energy-drink-2179032_960_720.jpg",
-        "recipe": {
-            "한국어": "그냥 따서 마시면 끝!",
-            "English": "Just open the can and enjoy!",
-            "Indonesia": "Buka kaleng dan langsung diminum!"
-        }
-    }
-]
-
-# 다국어 UI 텍스트
+# 다국어 텍스트
 TEXTS = {
     "한국어": {
         "title": "☕ AI 음료 추천 서비스",
@@ -135,10 +63,9 @@ TEXTS = {
     }
 }
 
-# 세션 초기화
+# 상태 초기화
 if "history" not in st.session_state:
     st.session_state.history = []
-
 if "favorites" not in st.session_state:
     st.session_state.favorites = []
 
@@ -149,23 +76,42 @@ T = TEXTS[language]
 st.title(T["title"])
 st.markdown(T["subtitle"])
 
-# 사용자 입력
-user_input = st.text_input(T["input_label"])
+# 음료 데이터 로드 (JSON 파일 기반)
+with open("drinks_data.json", "r", encoding="utf-8") as f:
+    drink_data = json.load(f)
 
-# 다국어 재료 필터
+# 사용자 입력
+user_input = st.text_input(T["input_label"], key="user_input")
+
+# 재료 필터
 all_ingredients = sorted(set(ing for drink in drink_data for ing in drink["ingredients"][language]))
 excluded = st.multiselect(T["filter_label"], all_ingredients)
 
-# 추천 버튼
-if st.button(T["recommend_button"]):
+# 버튼 나란히 배치
+col1, col2 = st.columns(2)
+with col1:
+    recommend = st.button(T["recommend_button"], use_container_width=True)
+with col2:
+    random_drink = st.button(T["random_button"], use_container_width=True)
+
+# 랜덤 추천
+if random_drink:
+    drink = random.choice(drink_data)
+    st.subheader(f"{T['random_result']}: {drink['name'][language]}")
+    st.image(drink["image"], width=250)
+    st.markdown(f"📝 {drink['desc'][language]}")
+    st.markdown(f"{T['recipe']}: {drink['recipe'][language]}")
+    # if st.button(f"❤️ {drink['name'][language]}", key="rand_fav"):
+    #     st.session_state.favorites.append(drink["name"][language])
+    st.stop()
+
+# 추천 로직
+if recommend:
     if not user_input.strip():
         st.warning(T["warning_input"])
     else:
         with st.spinner(T["loading"]):
-            filtered = [
-                d for d in drink_data
-                if not any(x in excluded for x in d["ingredients"][language])
-            ]
+            filtered = [d for d in drink_data if not any(x in excluded for x in d["ingredients"][language])]
             if not filtered:
                 st.warning(T["warning_no_result"])
             else:
@@ -182,8 +128,8 @@ if st.button(T["recommend_button"]):
                     st.markdown(f"📝 {drink['desc'][language]}")
                     st.markdown(f"{T['reason']}: `{score:.2f}`")
                     st.markdown(f"{T['recipe']}: {drink['recipe'][language]}")
-                    if st.button(f"❤️ {drink['name'][language]}", key=f"fav_{i}"):
-                        st.session_state.favorites.append(drink["name"][language])
+                    # if st.button(f"❤️ {drink['name'][language]}", key=f"fav_{i}"):
+                    #     st.session_state.favorites.append(drink["name"][language])
                     st.markdown("---")
 
                 st.session_state.history.append({
@@ -198,17 +144,6 @@ if st.session_state.history:
         st.markdown(f"💬 '{item['input']}' → **{item['top_choice']}**")
 
 # 찜 목록
-if st.session_state.favorites:
-    st.subheader(T["favorites"])
-    st.markdown(", ".join(set(st.session_state.favorites)))
-
-# 랜덤 추천
-if st.button(T["random_button"]):
-    drink = random.choice(drink_data)
-    st.subheader(f"{T['random_result']}: {drink['name'][language]}")
-    st.image(drink["image"], width=250)
-    st.markdown(f"📝 {drink['desc'][language]}")
-    st.markdown(f"{T['recipe']}: {drink['recipe'][language]}")
-    if st.button(f"❤️ {drink['name'][language]}", key="rand_fav"):
-        st.session_state.favorites.append(drink["name"][language])
-    st.stop()
+# if st.session_state.favorites:
+#     st.subheader(T["favorites"])
+#     st.markdown(", ".join(set(st.session_state.favorites)))
